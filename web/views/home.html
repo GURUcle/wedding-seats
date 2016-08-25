@@ -20,7 +20,7 @@
                     <div class="row">
                         <div class="twelve columns">
                             <label for="searchInput">Search (via name, surname, table, seat and rsvp contact number)</label>
-                            <input class="u-full-width" type="text" placeholder="Search (via name, surname, table, seat and rsvp contact number)" id="searchInput">
+                            <input class="u-full-width" type="text" placeholder="Search (via name, surname, table, seat and rsvp contact number)" id="searchInput" ng-model="search">
                         </div>
                     </div>
                 </form>
@@ -39,7 +39,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="guest in guests track by $index">
+                        <tr ng-repeat="guest in guests | filter: search">
                             <td>{{guest.name}}</td>
                             <td>{{guest.surname}}</td>
                             <td>{{guest.contact}}</td>
