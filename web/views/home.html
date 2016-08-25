@@ -1,6 +1,53 @@
 <div class="container">
     <div class="row">
-        <div class="one column">One</div>
-        <div class="eleven columns">Eleven</div>
+        <div class="docs-section" id="forms">
+            <div style="text-align:center;">
+                <img src="/img/logo.png" style="margin-top: 20px; margin-bottom: 10px; width: 250px;" />
+            </div>
+            <p>
+                Welcome to the wedding seats guests page. Below you will find a list of guests details which include their <strong>names</strong>,
+                <strong>surnames</strong>, <strong>table</strong>,
+                <strong>rsvp number</strong> and their <strong>seating number</strong>. Use the list below to confirm the
+                guest attendance and seating if they are unsuccessful using the USSD applicaiton provided by following the
+                following process:
+            </p>
+            <p>
+                1. Dial *120*1146# on your phone <br /> 2. Input <b>9234</b> as the applicaiton code on the first screen
+                3. Follow the instructions on the screen
+            </p>
+            <div class="docs-example docs-example-forms">
+                <form>
+                    <div class="row">
+                        <div class="twelve columns">
+                            <label for="searchInput">Search (via name, surname, table, seat and rsvp contact number)</label>
+                            <input class="u-full-width" type="text" placeholder="Search (via name, surname, table, seat and rsvp contact number)" id="searchInput">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="twelve columns">
+                <table class="u-full-width">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Contact (RSVP)</th>
+                            <th>Table</th>
+                            <th>Seat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="guest in guests track by $index">
+                            <td>{{guest.name}}</td>
+                            <td>{{guest.surname}}</td>
+                            <td>{{guest.contact}}</td>
+                            <td>Table: {{guest.table}}</td>
+                            <td>Seat: {{guest.seat}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-</div>

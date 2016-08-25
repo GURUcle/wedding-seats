@@ -9,7 +9,7 @@ module.exports = function (app) {
 
     app.get('/api/ussd/home', function (req, res) {
         res.type('text/plain');
-        res.send(nodes.Confirmation.Text);
+        res.send(nodes.Home.Text);
     });
 
     app.get('/api/ussd/exit', function (req, res) {

@@ -1,79 +1,19 @@
 {
-    "Confirmation": {
-        "Text": "Hello SmartStarter! Please enter your ID number.",
+    "Home": {
+        "Text": "Hi %s. Welcome to the Wedding Seats USSD application \n\nYour table is: 20 and your seat is 5\n\n0. Exit",
         "Responses": [
             {
                 "Type": "EqualTo",
-                "Value": "0000000000000",
-                "TargetNode": "Home"
+                "Value": 0,
+                "TargetNode": "Exit"
             }
         ],
+        "Error": "Hi %s we could not confirm your cellphone number. Please locate an usher to manually confirm your seating using out tablet applicaiton. Thanks.",
         "End": false,
         "Start": true
     },
-    "Home": {
-        "Text": "Hi %s. Welcome to SmartStart USSD \n\n1. Child Attendance - %s\n2. Club Attendance\n3. Playkit Confirmation\n4. Site Visit Confirmation\n0. Exit",
-        "Responses": [
-            {
-                "Type": "EqualTo",
-                "Value": 1,
-                "TargetNode": "ChildAttendance"
-            }
-        ],
-        "Error": "Could not log you into SmartStart. Please make sure that the ID %s is registered and try again\n\n%s",
-        "End": false,
-        "Start": false
-    },
-    "ChildAttendance": {
-        "Text": "SmartStart\n\nPlease select the absent child for %s\n\n%s%s\n0. Exit",
-        "Responses": [
-            {
-                "Type": "GreaterThan",
-                "Value": 0,
-                "TargetNode": "Exit"
-            }
-        ],
-        "End": false,
-        "Start": false
-    },
-    "WeekDay": {
-        "Text": "Please select a week day\n\n1. Monday\n2. Tuesday\n3. Wednesday\n4. Thursday\n5. Friday\n\n0. Exit",
-        "Responses": [
-            {
-                "Type": "GreaterThan",
-                "Value": 0,
-                "TargetNode": "Exit"
-            }
-        ],
-        "End": false,
-        "Start": false
-    },
-    "PlaykitConfirmation": {
-        "Text": "Playkit Receipt Confirmation\n\nSuccessfully Confirmed for %s",
-        "Responses": [
-            {
-                "Type": "GreaterThan",
-                "Value": 0,
-                "TargetNode": "Exit"
-            }
-        ],
-        "End": true,
-        "Start": false
-    },
-    "SiteVisitConfirmation": {
-        "Text": "Site Visit Confirmation\n\nSuccessfully Confirmed for %s",
-        "Responses": [
-            {
-                "Type": "GreaterThan",
-                "Value": 0,
-                "TargetNode": "Exit"
-            }
-        ],
-        "End": true,
-        "Start": false
-    },
     "Exit": {
-        "Text": "Thank you for using SmartStart USSD. Check in again tomorrow",
+        "Text": "Thank you for using the Wedding Seats USSD application. Check in again tomorrow for updates.",
         "Responses": [],
         "End": true,
         "Start": false
