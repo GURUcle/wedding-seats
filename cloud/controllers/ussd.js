@@ -13,10 +13,32 @@ module.exports = function (app) {
             contact: req.query.ussd_msisdn
         };
 
-        CRUD().findOne(Guest, findObject, function (data) {
+        var text = "";
+
+        CRUD().findAll(Guest, findObject, 'asc', 1000, 0, function (data) {
             if (data) {
-                res.type('text/plain');
-                res.send(util.format(nodes.Home.Text, data.name, data.surname, data.table, data.seat));
+                if (data.length > 1) {
+
+                    text = "";
+
+                    for (var i = 0; i < data.length; i++) {
+                        text += "Seat " + data[i].seat + ": " + data[i].name + " " + data[i].surname + "\n";
+                    }
+
+                    res.type('text/plain');
+                    res.send(util.format(nodes.Home.Text, data[0].table,text));
+
+                } else {
+
+                    text = "";
+
+                    for (var x = 0; x < data.length; x++) {
+                        text += "Seat " + data[x].seat + ": " + data[x].name + " " + data[x].surname + "\n";
+                    }
+
+                    res.type('text/plain');
+                    res.send(util.format(nodes.Home.Text, data[0].table, text));
+                }
             } else {
                 res.type('text/plain');
                 res.send(util.format(nodes.Home.Error, req.query.ussd_msisdn));
