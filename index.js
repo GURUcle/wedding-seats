@@ -34,6 +34,7 @@ app.use(express.static(__dirname + '/web'));
 
 // Configure Routes / API ==================================================
 require('./cloud/controllers/ussd')(app);
+require('./cloud/controllers/guest')(app);
 require('./cloud/controllers/routes')(app);
 
 // start app ===============================================
