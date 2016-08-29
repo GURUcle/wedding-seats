@@ -32,6 +32,7 @@
                 <table class="u-full-width">
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Name</th>
                             <th>Surname</th>
                             <th>Contact (RSVP)</th>
@@ -41,6 +42,7 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="guest in guests | filter: search">
+                            <td>{{guest.counter}}</td>
                             <td>{{guest.name}}</td>
                             <td>{{guest.surname}}</td>
                             <td>{{guest.contact}}</td>
