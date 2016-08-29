@@ -1,6 +1,6 @@
 {
     "Home": {
-        "Text": "Hi and Welcome to the Wedding Seats applicaiton. Seating arangements for table %s \n\n%s",
+        "Text": "Hi and Welcome to the Wedding Seats applicaiton.\n\nTable - %s \n\n%s",
         "Responses": [
             {
                 "Type": "EqualTo",
