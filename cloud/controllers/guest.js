@@ -57,9 +57,10 @@ module.exports = function (app) {
     });
 
     app.get('/api/guest', function (req, res) {
-
-        
-
+        CRUD().findAll(Guest, {}, 'asc', 1000, 0, function (data) {
+            res.json(data);
+        }, function (error) {
+            res.json(error);
+        });
     });
-
 };

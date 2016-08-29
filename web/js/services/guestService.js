@@ -5,8 +5,8 @@ angular.module('weddingseats').factory('GuestService', [
             createGuest: function (data) {
                 return $http.post('/api/guest', data);
             },
-            findGuests: function (skip, take, username) {
-                return $http.get('/api/guest/' + username + '?skip=' + skip + '&take=' + take);
+            findGuests: function (skip, take) {
+                return $http.get('/api/guest?skip=' + skip + '&take=' + take);
             },
             findGuest: function (id) {
                 return $http.get('/api/guest/' + id);

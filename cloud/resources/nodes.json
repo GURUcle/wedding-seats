@@ -1,6 +1,6 @@
 {
     "Home": {
-        "Text": "Hi Mazi Muhlari. Welcome to the Wedding Seats USSD application \n\nYour table is: 20 and your seat is 5\n\n0. Exit",
+        "Text": "Hi %s %s. Welcome to the Wedding Seats USSD application \n\nYour table is: %s and your seat is %s\n\n0. Exit",
         "Responses": [
             {
                 "Type": "EqualTo",
@@ -8,7 +8,7 @@
                 "TargetNode": "Exit"
             }
         ],
-        "Error": "Hi %s we could not confirm your cellphone number. Please locate an usher to manually confirm your seating using out tablet applicaiton. Thanks.",
+        "Error": "Hi %s we could not confirm your cellphone number. Please locate an usher to manually confirm your seating using our tablet applicaiton. Thanks.",
         "End": false,
         "Start": true
     },
