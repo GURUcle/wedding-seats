@@ -25,22 +25,8 @@ module.exports = function (app) {
                         text += "Seat " + data[i].seat + ": " + data[i].name + " " + data[i].surname + "\n";
                     }
 
-                    request("http://api.panaceamobile.com/json?action=message_send&username=CrunchingCode&password=nchongin00&to=" + req.query.ussd_msisdn + "&text=" + data[0].table + "&from=27726422105&auto_detect_encoding=1", function (error, response, body) {
-                        if (!error && response.statusCode == 200) {
-                            console.log(response);
-                        } else {
-                            console.log(response);
-                        }
-                    });
-
                     res.type('text/plain');
-                    res.send(util.format(nodes.Home.Text, table, text));
-
-                } else if (data.length > 0) {
-
-                    text = "";
-
-                    text += "Seat " + data[0].seat + ": " + data[0].name + " " + data[0].surname + "\n";
+                    res.send(util.format(nodes.Home.Text, data[0].table, text));
 
                     request("http://api.panaceamobile.com/json?action=message_send&username=CrunchingCode&password=nchongin00&to=" + req.query.ussd_msisdn + "&text=" + util.format(nodes.Home.Text, data[0].table, text) + "&from=27726422105&auto_detect_encoding=1", function (error, response, body) {
                         if (!error && response.statusCode == 200) {
@@ -50,10 +36,27 @@ module.exports = function (app) {
                         }
                     });
 
+                } else if (data.length > 0) {
+
+                    text = "";
+
+                    text += "Seat " + data[0].seat + ": " + data[0].name + " " + data[0].surname + "\n";
+
                     res.type('text/plain');
                     res.send(util.format(nodes.Home.Text, data[0].table, text));
 
+                    request("http://api.panaceamobile.com/json?action=message_send&username=CrunchingCode&password=nchongin00&to=" + req.query.ussd_msisdn + "&text=" + util.format(nodes.Home.Text, data[0].table, text) + "&from=27726422105&auto_detect_encoding=1", function (error, response, body) {
+                        if (!error && response.statusCode == 200) {
+                            console.log(response);
+                        } else {
+                            console.log(response);
+                        }
+                    });
+
                 } else {
+
+                    res.type('text/plain');
+                    res.send(util.format(nodes.Home.Error, req.query.ussd_msisdn));
 
                     request("http://api.panaceamobile.com/json?action=message_send&username=CrunchingCode&password=nchongin00&to=" + req.query.ussd_msisdn + "&text=" + util.format(nodes.Home.Error, req.query.ussd_msisdn) + "&from=27726422105&auto_detect_encoding=1", function (error, response, body) {
                         if (!error && response.statusCode == 200) {
@@ -63,12 +66,12 @@ module.exports = function (app) {
                         }
                     });
 
-                    res.type('text/plain');
-                    res.send(util.format(nodes.Home.Error, req.query.ussd_msisdn));
-
                 }
 
             } else {
+
+                res.type('text/plain');
+                res.send(util.format(nodes.Home.Error, req.query.ussd_msisdn));
 
                 request("http://api.panaceamobile.com/json?action=message_send&username=CrunchingCode&password=nchongin00&to=" + req.query.ussd_msisdn + "&text=" + util.format(nodes.Home.Error, req.query.ussd_msisdn) + "&from=27726422105&auto_detect_encoding=1", function (error, response, body) {
                     if (!error && response.statusCode == 200) {
@@ -78,10 +81,11 @@ module.exports = function (app) {
                     }
                 });
 
-                res.type('text/plain');
-                res.send(util.format(nodes.Home.Error, req.query.ussd_msisdn));
             }
         }, function (error) {
+
+            res.type('text/plain');
+            res.send(util.format(nodes.Home.Error, req.query.ussd_msisdn));
 
             request("http://api.panaceamobile.com/json?action=message_send&username=CrunchingCode&password=nchongin00&to=" + req.query.ussd_msisdn + "&text=" + util.format(nodes.Home.Error, req.query.ussd_msisdn) + "&from=27726422105&auto_detect_encoding=1", function (error, response, body) {
                 if (!error && response.statusCode == 200) {
@@ -91,8 +95,6 @@ module.exports = function (app) {
                 }
             });
 
-            res.type('text/plain');
-            res.send(util.format(nodes.Home.Error, req.query.ussd_msisdn));
         });
 
     });
