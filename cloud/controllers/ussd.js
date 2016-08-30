@@ -54,47 +54,17 @@ module.exports = function (app) {
                     });
 
                 } else {
-
                     res.type('text/plain');
                     res.send(util.format(nodes.Home.Error, req.query.ussd_msisdn));
-
-                    request("http://api.panaceamobile.com/json?action=message_send&username=CrunchingCode&password=nchongin00&to=" + req.query.ussd_msisdn + "&text=" + util.format(nodes.Home.Error, req.query.ussd_msisdn) + "&from=27726422105&auto_detect_encoding=1", function (error, response, body) {
-                        if (!error && response.statusCode == 200) {
-                            console.log(response);
-                        } else {
-                            console.log(response);
-                        }
-                    });
-
                 }
 
             } else {
-
                 res.type('text/plain');
                 res.send(util.format(nodes.Home.Error, req.query.ussd_msisdn));
-
-                request("http://api.panaceamobile.com/json?action=message_send&username=CrunchingCode&password=nchongin00&to=" + req.query.ussd_msisdn + "&text=" + util.format(nodes.Home.Error, req.query.ussd_msisdn) + "&from=27726422105&auto_detect_encoding=1", function (error, response, body) {
-                    if (!error && response.statusCode == 200) {
-                        console.log(response);
-                    } else {
-                        console.log(response);
-                    }
-                });
-
             }
         }, function (error) {
-
             res.type('text/plain');
             res.send(util.format(nodes.Home.Error, req.query.ussd_msisdn));
-
-            request("http://api.panaceamobile.com/json?action=message_send&username=CrunchingCode&password=nchongin00&to=" + req.query.ussd_msisdn + "&text=" + util.format(nodes.Home.Error, req.query.ussd_msisdn) + "&from=27726422105&auto_detect_encoding=1", function (error, response, body) {
-                if (!error && response.statusCode == 200) {
-                    console.log(response);
-                } else {
-                    console.log(response);
-                }
-            });
-
         });
 
     });
