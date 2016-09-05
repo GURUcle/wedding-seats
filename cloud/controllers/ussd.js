@@ -31,7 +31,7 @@ module.exports = function (app) {
                 });
 
                 for (var x = 0; x < unique.length; x++) {
-                    text += cursor + ". Table " + data[x].table + "\n";
+                    text += cursor + ". Table " + unique[x] + "\n";
                     cursor++;
                 }
 
@@ -60,7 +60,7 @@ module.exports = function (app) {
 
     app.get('/api/ussd/chairs', function (req, res) {
 
-        var table = req.query.ussd_response_WeddingSeatsChairs;
+        var table = req.query.ussd_response_WeddingSeatsHome;
         var text = "";
         var tables = [];
 
