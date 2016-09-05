@@ -13,7 +13,7 @@
         "Start": true
     },
     "Chairs": {
-        "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nTable - %s \n\n%s",
+        "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nBelow are your seating arrangements for table %s \n\n%s",
         "Responses": [
             {
                 "Type": "EqualTo",
