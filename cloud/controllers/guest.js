@@ -10,7 +10,7 @@ module.exports = function (app) {
 
     app.get('/api/guest/import', function (req, res) {
 
-        var workbook = xlsx.readFile('web/uploads/guest-template.xlsx');
+        var workbook = xlsx.readFile('web/uploads/guest-template-v2.xlsx');
 
         var first_sheet_name = workbook.SheetNames[0];
 
@@ -19,7 +19,7 @@ module.exports = function (app) {
 
         var guests = [];
 
-        for (var i = 5; i < 305; i++) {
+        for (var i = 5; i < 306; i++) {
 
             var createObject = {};
 
