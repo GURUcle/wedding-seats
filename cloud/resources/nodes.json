@@ -1,5 +1,18 @@
 {
     "Home": {
+        "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nSelect a table below to view the seating arrangements\n\n%s",
+        "Responses": [
+            {
+                "Type": "EqualTo",
+                "Value": 0,
+                "TargetNode": "Exit"
+            }
+        ],
+        "Error": "We could not confirm your cellphone number %s. Please locate an usher to manually confirm your seating using our tablet application. Thanks.",
+        "End": false,
+        "Start": true
+    },
+    "Chairs": {
         "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nTable - %s \n\n%s",
         "Responses": [
             {

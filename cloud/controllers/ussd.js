@@ -69,6 +69,15 @@ module.exports = function (app) {
 
     });
 
+    app.get('/api/ussd/chairs', function (req, res) {
+
+        var table = req.query.ussd_response_WeddingSeatsChairs;
+        var text = "";
+
+        res.type('text/plain');
+        res.send(util.format(nodes.Chairs.Error, req.query.ussd_msisdn));
+    });
+
     app.get('/api/ussd/exit', function (req, res) {
         res.type('text/plain');
         res.send(nodes.Exit.Text);
