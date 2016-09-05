@@ -1,6 +1,6 @@
 {
     "Home": {
-        "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nSelect a table below to view the seating arrangements\n\n%s",
+        "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nSelect a table below to view the seating arrangements\n\n%s\n\n0. Exit",
         "Responses": [
             {
                 "Type": "EqualTo",
@@ -13,7 +13,7 @@
         "Start": true
     },
     "Chairs": {
-        "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nBelow are your seating arrangements for table %s \n\n%s",
+        "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nBelow are your seating arrangements for table %s \n\n%s\n\n0. Exit",
         "Responses": [
             {
                 "Type": "EqualTo",
