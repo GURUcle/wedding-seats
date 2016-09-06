@@ -1,6 +1,6 @@
 {
     "Home": {
-        "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nSelect a table below to view the seating arrangements\n\n%s\n0. Exit",
+        "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nSelect a table below to view the seating arrangements or input a cellphone number in this format \"27720000000\" to check the table arrangements.\n\n%s\n0. Exit",
         "Responses": [
             {
                 "Type": "EqualTo",

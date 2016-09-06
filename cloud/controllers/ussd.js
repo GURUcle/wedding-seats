@@ -64,9 +64,13 @@ module.exports = function (app) {
         var text = "";
         var tables = [];
 
-        var findObject = {
-            contact: req.query.ussd_msisdn
-        };
+        var findObject = {};
+
+        if (req.query.ussd_response_WeddingSeatsHome && req.query.ussd_response_WeddingSeatsHome > 10) {
+            findObject.contact = req.query.ussd_response_WeddingSeatsHome;
+        } else {
+            findObject.contact = req.query.ussd_msisdn;
+        }
 
         CRUD().findAll(Guest, findObject, 'asc', 1000, 0, function (data) {
             if (data && data.length > 0) {
@@ -83,10 +87,18 @@ module.exports = function (app) {
                     return index == self.indexOf(elem);
                 });
 
-                for (var x = 0; x < data.length; x++) {
-                    if (data[x].table === unique[index]) {
-                        text += cursor + ". Seat " + data[x].seat + "\n";
+                if (table > 10) {
+                    for (var y = 0; y < unique.length; y++) {
+                        text += cursor + ". Table " + unique[y] + "\n";
                         cursor++;
+                    }
+                } else {
+
+                    for (var x = 0; x < data.length; x++) {
+                        if (data[x].table === unique[index]) {
+                            text += cursor + ". Seat " + data[x].seat + "\n";
+                            cursor++;
+                        }
                     }
                 }
 
