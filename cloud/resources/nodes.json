@@ -1,6 +1,6 @@
 {
     "Home": {
-        "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nSelect a table below to view the seating arrangements or input a cellphone number in this format \"27720000000\" to check the table arrangements.\n\n%s\n0. Exit",
+        "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nSelect a table below or input a cellphone number to check the table arrangements.\n\n%s\n0. Exit",
         "Responses": [
             {
                 "Type": "EqualTo",
@@ -14,6 +14,19 @@
     },
     "Chairs": {
         "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nBelow are your seating arrangements for table %s \n\n%s\n0. Exit",
+        "Responses": [
+            {
+                "Type": "EqualTo",
+                "Value": 0,
+                "TargetNode": "Exit"
+            }
+        ],
+        "Error": "We could not confirm your cellphone number %s. Please locate an usher to manually confirm your seating using our tablet application. Thanks.",
+        "End": false,
+        "Start": true
+    },
+    "SMS": {
+        "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nYour table arangements or as follows.\n\n%s\n0. Exit",
         "Responses": [
             {
                 "Type": "EqualTo",

@@ -35,10 +35,19 @@ module.exports = function (app) {
                     cursor++;
                 }
 
+                var guests = "";
+                var counter = 1;
+
+                for (var c = 0; c < data.length; c++) {
+                    tables.push(data[c].table);
+                    text += counter + ". " + data[c].name + " " + data[c].surname + " Table: " + data[c].table + " Seat:" + data[c].seat + "\n";
+                    counter++;
+                }
+
                 res.type('text/plain');
                 res.send(util.format(nodes.Home.Text, text));
 
-                request("http://api.panaceamobile.com/json?action=message_send&username=CrunchingCode&password=nchongin00&to=" + req.query.ussd_msisdn + "&text=" + util.format(nodes.Home.Text, text) + "&from=27726422105&auto_detect_encoding=1", function (error, response, body) {
+                request("http://api.panaceamobile.com/json?action=message_send&username=CrunchingCode&password=nchongin00&to=" + req.query.ussd_msisdn + "&text=" + util.format(nodes.SMS.Text, guests) + "&from=27726422105&auto_detect_encoding=1", function (error, response, body) {
                     if (!error && response.statusCode == 200) {
                         console.log(response);
                     } else {
