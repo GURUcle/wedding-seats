@@ -40,7 +40,7 @@ module.exports = function (app) {
 
                 for (var c = 0; c < data.length; c++) {
                     tables.push(data[c].table);
-                    text += counter + ". " + data[c].name + " " + data[c].surname + " Table: " + data[c].table + " Seat:" + data[c].seat + "\n";
+                    guests += counter + ". " + data[c].name + " " + data[c].surname + " Table: " + data[c].table + " Seat:" + data[c].seat + "\n";
                     counter++;
                 }
 
