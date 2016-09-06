@@ -26,7 +26,7 @@
         "Start": true
     },
     "SMS": {
-        "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nYour table arangements or as follows.\n\n%s\n0. Exit",
+        "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nYour table arangements or as follows.\n\n%s",
         "Responses": [
             {
                 "Type": "EqualTo",
