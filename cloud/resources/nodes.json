@@ -39,7 +39,7 @@
         "Start": true
     },
     "MoreOptions": {
-        "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nPlease enter number in the following format \"27000000000\" to view table arrangements",
+        "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nPlease enter number in the following format \"%s\" to view table arrangements\n\n0. Exit",
         "Responses": [
             {
                 "Type": "EqualTo",
