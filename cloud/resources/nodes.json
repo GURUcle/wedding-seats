@@ -38,6 +38,19 @@
         "End": false,
         "Start": true
     },
+    "MoreOptions": {
+        "Text": "Wedding Seats - 17 Sept @ Isiphiwo\n\nPlease enter number in the following format \"27000000000\" to view table arrangements",
+        "Responses": [
+            {
+                "Type": "EqualTo",
+                "Value": 0,
+                "TargetNode": "Exit"
+            }
+        ],
+        "Error": "We could not confirm your cellphone number %s. Please locate an usher to manually confirm your seating using our tablet application. Thanks.",
+        "End": false,
+        "Start": true
+    },
     "Exit": {
         "Text": "Thank you for using the Wedding Seats USSD application. Check in again tomorrow for updates.",
         "Responses": [],

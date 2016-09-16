@@ -121,6 +121,11 @@ module.exports = function (app) {
         });
     });
 
+    app.get('/api/ussd/more-options', function (req, res) {
+        res.type('text/plain');
+        res.send(util.format(nodes.MoreOptions.Text, req.query.ussd_msisdn));
+    });
+
     app.get('/api/ussd/exit', function (req, res) {
         res.type('text/plain');
         res.send(nodes.Exit.Text);
